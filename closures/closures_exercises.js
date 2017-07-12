@@ -38,3 +38,20 @@ var lastNameTrier = function(lastName){
 var firstNameFarmer = lastNameTrier('Stevenson');
 firstNameFarmer('Alex');
 
+// 6 ============================================
+
+var storyWriter = function(){
+	var story = '';
+	return {
+		addWords: function(sentence){
+			return story = story + " " + sentence;
+		},
+		erase: function(){
+			return story = "";
+		}
+	};
+};
+
+// var farmLoveStory = storyWriter();
+// farmLoveStory.addWords('There was once a lonely cow.');
+

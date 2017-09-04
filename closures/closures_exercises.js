@@ -95,9 +95,42 @@ var Toaster = function(){
 	};
 }
 
+var toast1 = Toaster();
+toast1.toastTimer(3);
+
+
+// extra credit - fix this function --------------------------------
+
+var checkAttendanceFunc = function(){
+	var resultArr = [];
+
+	var attendanceReport = function(nameArr){
+		for(var i = 0; i < nameArr.length; i++){
+			resultArr.push(function(){ console.log('Is', nameArr[i], 'present?', i);});
+		}
+	};
+
+	// return {
+	// 		attendanceReport: function(nameArr){ for(var i = 0; i < nameArr.length; i++){
+	// 			resultArr.push(function(){ console.log('Is', nameArr[i], 'present?', i);});
+	// 		}
+	// 	};	
+		return resultArr;
+	// 	}
+};
+
+var class1 = checkAttendanceFunc();
+
+
+
+// callbacks -----------------------------------
+
+// Write a function, funcCaller, that takes a func (a function) and an arg (any data type). The function returns the func called with arg(as an argument).
 
 
 
 
+//Write a function, firstVal, that takes an array, arr, and a function, func, and calls func with the first index of the arr, the index # and the whole array.
 
+//Change firstVal to work not only with arrays but also objects. Since objects are not ordered, you can use any key-value pair on the object.
 

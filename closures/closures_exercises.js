@@ -104,22 +104,29 @@ toast1.toastTimer(3);
 var checkAttendanceFunc = function(){
 	var resultArr = [];
 
-	var attendanceReport = function(nameArr){
-		for(var i = 0; i < nameArr.length; i++){
-			resultArr.push(function(){ console.log('Is', nameArr[i], 'present?', i);});
-		}
-	};
-
-	// return {
-	// 		attendanceReport: function(nameArr){ for(var i = 0; i < nameArr.length; i++){
-	// 			resultArr.push(function(){ console.log('Is', nameArr[i], 'present?', i);});
-	// 		}
-	// 	};	
-		return resultArr;
+	// var attendanceReport = function(nameArr){
+	// 	for(var i = 0; i < nameArr.length; i++){
+	// 		// resultArr.push(function(){ console.log('Is', nameArr[i], 'present?', i);});
+ //      resultArr.push('Is', nameArr[i], 'present?', i);
 	// 	}
+ //    return resultArr;
+	// };
+
+	return {
+			attendanceReport: function(nameArr){ for(var i = 0; i < nameArr.length; i++){
+				resultArr.push('Is', nameArr[i], 'present?', i);
+			}
+			return resultArr;
+		}	
+	};
 };
 
 var class1 = checkAttendanceFunc();
+
+console.log(class1.attendanceReport(['bob', 'bob2', 'bob3']));
+console.log(class1.attendanceReport(['mary', 'mary2', 'mary3']));
+
+// While I'm not completely sure if the console logging looks like it is supposed to, the result Arr is keeping old values, and then adds additional strings, and the user isn't able to delete values, so I feel like that is the important part of the exercise really.
 
 
 
@@ -127,7 +134,16 @@ var class1 = checkAttendanceFunc();
 
 // Write a function, funcCaller, that takes a func (a function) and an arg (any data type). The function returns the func called with arg(as an argument).
 
+var funcCaller = function(){
+	return {
+		func: function(arg){
+			return arg;
+		}
+	};
+};
 
+var funcTest = funcCaller();
+funcTest.func('testing back');
 
 
 //Write a function, firstVal, that takes an array, arr, and a function, func, and calls func with the first index of the arr, the index # and the whole array.
